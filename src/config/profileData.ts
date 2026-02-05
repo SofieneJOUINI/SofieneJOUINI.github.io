@@ -92,16 +92,16 @@ export const profileConfig = {
   // ========== HERO SECTION ==========
   hero: {
     name: "Sofiene JOUINI",
-    title: "Senior Application Manager",
-    description: "I design and develop scalable, maintainable systems for the airline IT industry, focused on payment reconciliation and revenue accounting.",
+    title: "Senior Software Engineer",
+    description: "I design and develop scalable, maintainable systems for the airline IT industry, focused on payment management and accounting systems.",
     profileImage: "/src/assets/hero-portrait.jpeg"
   },
 
   // ========== ABOUT SECTION ==========
   about: {
     paragraphs: [
-      "I'm a software engineering leader with 7+ years of experience in the airline industry, specializing in payment reconciliation and revenue accounting solutions. My journey started with hands-on development and evolved into managing and coordinating engineering teams.",
-      "I specialize in clean architecture, domain-driven design, and building scalable, maintainable systems. I believe in writing clean code and empowering teams to deliver high-quality solutions.",
+      "I'm a software engineering leader with 7+ years of experience in the airline industry, working continuously within the same organization. My journey started with hands-on development and evolved into leading and coordinating engineering teams across complex payment and accounting domains.",
+      "I'm working on scalable, modular solutions handling millions of airline sales, payment, and accounting transactions, with a strong focus on clean architecture and domain-driven design."
       "Currently leading backend and frontend teams, working closely with DevOps, Architecture, and Product teams to align efforts and meet delivery targets."
     ]
   },
