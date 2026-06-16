@@ -117,55 +117,54 @@ export default {
         },
         "plane-fly": {
           "0%": {
-            transform: "translate(0, 0) rotate(var(--plane-rotate, 15deg)) scale(1)",
-            opacity: "0.6",
+            transform: "translate(0, 0) rotate(8deg)",
+            opacity: "0",
           },
-          "10%": {
-            transform: "translate(40px, -8px) rotate(calc(var(--plane-rotate, 15deg) - 2deg)) scale(1.02)",
-            opacity: "0.7",
+          "5%": {
+            opacity: "0.65",
           },
-          "20%": {
-            transform: "translate(90px, -2px) rotate(calc(var(--plane-rotate, 15deg) + 1deg)) scale(1)",
-            opacity: "0.8",
-          },
-          "35%": {
-            transform: "translate(160px, -12px) rotate(calc(var(--plane-rotate, 15deg) - 3deg)) scale(1.05)",
+          "15%": {
+            transform: "translate(12vw, -18px) rotate(4deg)",
             opacity: "0.75",
           },
-          "50%": {
-            transform: "translate(250px, -5px) rotate(var(--plane-rotate, 15deg)) scale(1)",
-            opacity: "0.85",
+          "28%": {
+            transform: "translate(26vw, 10px) rotate(11deg)",
+            opacity: "0.8",
           },
-          "65%": {
-            transform: "translate(340px, -15px) rotate(calc(var(--plane-rotate, 15deg) - 4deg)) scale(1.03)",
+          "42%": {
+            transform: "translate(41vw, -22px) rotate(3deg)",
+            opacity: "0.75",
+          },
+          "55%": {
+            transform: "translate(55vw, 8px) rotate(13deg)",
             opacity: "0.7",
           },
-          "80%": {
-            transform: "translate(450px, -3px) rotate(calc(var(--plane-rotate, 15deg) + 1deg)) scale(1)",
-            opacity: "0.6",
+          "68%": {
+            transform: "translate(68vw, -16px) rotate(5deg)",
+            opacity: "0.65",
           },
-          "90%": {
-            transform: "translate(520px, -10px) rotate(calc(var(--plane-rotate, 15deg) - 2deg)) scale(1.02)",
-            opacity: "0.4",
+          "80%": {
+            transform: "translate(80vw, 12px) rotate(10deg)",
+            opacity: "0.55",
+          },
+          "92%": {
+            transform: "translate(92vw, -8px) rotate(7deg)",
+            opacity: "0.3",
           },
           "100%": {
-            transform: "translate(600px, -2px) rotate(var(--plane-rotate, 15deg)) scale(1)",
+            transform: "translate(110vw, 4px) rotate(9deg)",
             opacity: "0",
           },
         },
         "plane-drift": {
-          "0%, 100%": {
-            transform: "translateY(0) rotate(var(--plane-rotate, 15deg))",
-          },
-          "25%": {
-            transform: "translateY(-5px) rotate(calc(var(--plane-rotate, 15deg) - 1deg))",
-          },
-          "50%": {
-            transform: "translateY(3px) rotate(calc(var(--plane-rotate, 15deg) + 0.5deg))",
-          },
-          "75%": {
-            transform: "translateY(-7px) rotate(calc(var(--plane-rotate, 15deg) - 1.5deg))",
-          },
+          "0%":   { transform: "translate(0, 0) rotate(8deg)", opacity: "0" },
+          "5%":   { opacity: "0.55" },
+          "20%":  { transform: "translate(18vw, -14px) rotate(3deg)" },
+          "40%":  { transform: "translate(38vw, 12px) rotate(12deg)" },
+          "60%":  { transform: "translate(58vw, -18px) rotate(4deg)" },
+          "80%":  { transform: "translate(78vw, 8px) rotate(10deg)", opacity: "0.4" },
+          "95%":  { opacity: "0" },
+          "100%": { transform: "translate(105vw, -4px) rotate(7deg)", opacity: "0" },
         },
       },
       animation: {

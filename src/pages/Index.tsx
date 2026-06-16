@@ -8,7 +8,6 @@ import Education from "@/components/Education";
 import Contact from "@/components/Contact";
 import Loader from "@/components/Loader";
 import CardNavigation from "@/components/CardNavigation";
-import { ThemeToggle } from "@/components/ThemeToggle";
 import { Separator } from "@/components/ui/separator";
 import { useState, useEffect } from "react";
 
@@ -31,7 +30,6 @@ const Index = () => {
   return (
     <div className="relative">
       <AnimatedBackground />
-      <ThemeToggle />
       <CardNavigation sections={sections} />
       <div id="hero">
         <Hero />

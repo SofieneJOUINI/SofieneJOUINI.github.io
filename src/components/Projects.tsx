@@ -9,6 +9,21 @@ import {
   ArrowUpRight,
   Stethoscope
 } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
+
+function useReveal() {
+  const ref = useRef<HTMLDivElement>(null);
+  const [visible, setVisible] = useState(false);
+  useEffect(() => {
+    const obs = new IntersectionObserver(
+      ([e]) => { if (e.isIntersecting) { setVisible(true); obs.disconnect(); } },
+      { threshold: 0.1 }
+    );
+    if (ref.current) obs.observe(ref.current);
+    return () => obs.disconnect();
+  }, []);
+  return { ref, visible };
+}
 
 const Projects = () => {
   const { projects: projectsUI } = uiConfig;
@@ -29,11 +44,18 @@ const Projects = () => {
         </h2>
         
         <div className="grid sm:grid-cols-2 gap-4 sm:gap-6">
-          {profileConfig.projects.map((project, index) => (
+          {profileConfig.projects.map((project, index) => {
+            const { ref, visible } = useReveal();
+            return (
             <Card 
               key={project.id}
-              className="glass-card border-none shadow-[var(--shadow-elegant)] hover:shadow-[var(--shadow-glow)] transition-all duration-500 animate-fade-in group overflow-hidden relative"
-              style={{ animationDelay: `${index * 0.1}s` }}
+              ref={ref}
+              className="glass-card border-none shadow-[var(--shadow-elegant)] hover:shadow-[var(--shadow-glow)] transition-all duration-500 group overflow-hidden relative"
+              style={{
+                opacity: visible ? 1 : 0,
+                transform: visible ? "translateY(0)" : "translateY(24px)",
+                transition: `opacity 0.5s ease ${index * 0.1}s, transform 0.5s ease ${index * 0.1}s, box-shadow 0.5s`
+              }}
             >
               {/* Gradient Background */}
               <div className={`absolute inset-0 bg-gradient-to-br ${themeConfig.projectColors[project.id] || "from-primary/10 to-transparent"} opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
@@ -79,7 +101,7 @@ const Projects = () => {
               {/* Bottom accent line */}
               <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-primary to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
             </Card>
-          ))}
+          );})}
         </div>
       </div>
     </section>

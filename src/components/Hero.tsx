@@ -33,10 +33,12 @@ const Hero = () => {
         {/* Content */}
         <div className="text-center md:text-left max-w-2xl">
           {/* Greeting badge */}
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 border border-primary/20 rounded-full mb-6">
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 border border-primary/20 rounded-full mb-3">
             <Sparkles className="w-4 h-4 text-primary" />
             <span className="text-sm font-medium text-primary">{heroUI.greeting}</span>
           </div>
+
+
           
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4 md:mb-6 tracking-tight leading-tight">
             {heroUI.namePrefix}{" "}
@@ -58,6 +60,15 @@ const Hero = () => {
             ))}
           </div>
 
+          {/* Domain expertise tags */}
+          <div className="flex flex-wrap gap-2 justify-center md:justify-start mb-8">
+            {["✈ Airline Industry", "💳 Payment Systems", "📊 Revenue Accounting"].map((tag) => (
+              <span key={tag} className="text-xs px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary/80 font-medium">
+                {tag}
+              </span>
+            ))}
+          </div>
+
           <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start mb-8 md:mb-10">
             <Button 
               size="lg" 
@@ -69,7 +80,8 @@ const Hero = () => {
             </Button>
             <Button 
               size="lg" 
-              className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-[0_10px_30px_-10px_hsl(var(--primary)/0.5)] hover:shadow-[0_15px_40px_-10px_hsl(var(--primary)/0.6)] transition-all duration-300 w-full sm:w-auto group"
+              variant="outline"
+              className="border-primary/40 text-primary hover:bg-primary/10 hover:border-primary/60 transition-all duration-300 w-full sm:w-auto"
               onClick={() => document.querySelector(heroUI.secondaryButtonTarget)?.scrollIntoView({ behavior: 'smooth' })}
             >
               {heroUI.secondaryButtonText}

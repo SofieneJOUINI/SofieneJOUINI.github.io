@@ -1,13 +1,27 @@
 import { 
   Calendar,
   MapPin,
-  Trophy,
-  ChevronRight
+  Trophy
 } from "lucide-react";
 import { profileConfig, uiConfig } from "@/config/profileData";
 import ensimagLogo from "@/assets/ensimag-logo.png";
 import ensitLogo from "@/assets/ensit-logo.png";
 import ipeitLogo from "@/assets/ipeit-logo.png";
+import { useEffect, useRef, useState } from "react";
+
+function useReveal() {
+  const ref = useRef<HTMLDivElement>(null);
+  const [visible, setVisible] = useState(false);
+  useEffect(() => {
+    const obs = new IntersectionObserver(
+      ([e]) => { if (e.isIntersecting) { setVisible(true); obs.disconnect(); } },
+      { threshold: 0.1 }
+    );
+    if (ref.current) obs.observe(ref.current);
+    return () => obs.disconnect();
+  }, []);
+  return { ref, visible };
+}
 
 const Education = () => {
   const { education: educationUI } = uiConfig;
@@ -27,11 +41,18 @@ const Education = () => {
         </h2>
         
         <div className="grid gap-6 md:gap-8">
-          {profileConfig.education.map((edu, index) => (
-            <div 
+          {profileConfig.education.map((edu, index) => {
+            const { ref, visible } = useReveal();
+            return (
+            <div
               key={edu.id}
-              className="group relative animate-fade-in"
-              style={{ animationDelay: `${index * 0.2}s` }}
+              ref={ref}
+              className="group relative"
+              style={{
+                opacity: visible ? 1 : 0,
+                transform: visible ? "translateY(0)" : "translateY(28px)",
+                transition: `opacity 0.5s ease ${index * 0.1}s, transform 0.5s ease ${index * 0.1}s`
+              }}
             >
               {/* Main card */}
               <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-card/80 to-card/40 backdrop-blur-xl border border-border/50 hover:border-primary/40 transition-all duration-500 hover:shadow-[var(--shadow-glow)]">
@@ -99,16 +120,8 @@ const Education = () => {
                 <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-primary/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               </div>
               
-              {/* Connector between cards */}
-              {index < profileConfig.education.length - 1 && (
-                <div className="hidden md:flex justify-center py-2">
-                  <div className="flex flex-col items-center gap-1">
-                    <ChevronRight className="w-5 h-5 text-primary/40 rotate-90" />
-                  </div>
-                </div>
-              )}
             </div>
-          ))}
+          );})}
         </div>
       </div>
     </section>

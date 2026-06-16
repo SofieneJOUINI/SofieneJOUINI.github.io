@@ -31,6 +31,21 @@ import {
   Brain
 } from "lucide-react";
 import { profileConfig, uiConfig } from "@/config/profileData";
+import { useEffect, useRef, useState } from "react";
+
+function useReveal(delay = 0) {
+  const ref = useRef<HTMLDivElement>(null);
+  const [visible, setVisible] = useState(false);
+  useEffect(() => {
+    const obs = new IntersectionObserver(
+      ([e]) => { if (e.isIntersecting) { setVisible(true); obs.disconnect(); } },
+      { threshold: 0.1 }
+    );
+    if (ref.current) obs.observe(ref.current);
+    return () => obs.disconnect();
+  }, []);
+  return { ref, visible };
+}
 
 const Skills = () => {
   const { skills: skillsUI } = uiConfig;
@@ -101,11 +116,18 @@ const Skills = () => {
         </h2>
         
         <div className="grid sm:grid-cols-2 gap-4 sm:gap-6">
-          {profileConfig.skills.categories.map((category, index) => (
+          {profileConfig.skills.categories.map((category, index) => {
+            const { ref, visible } = useReveal();
+            return (
             <div 
               key={category.id}
-              className="group glass-card rounded-2xl p-6 sm:p-8 shadow-[var(--shadow-elegant)] animate-fade-in hover:shadow-[var(--shadow-glow)] transition-all duration-500"
-              style={{ animationDelay: `${index * 0.1}s` }}
+              ref={ref}
+              className="group glass-card rounded-2xl p-6 sm:p-8 shadow-[var(--shadow-elegant)] hover:shadow-[var(--shadow-glow)] transition-all duration-500"
+              style={{
+                opacity: visible ? 1 : 0,
+                transform: visible ? "translateY(0)" : "translateY(24px)",
+                transition: `opacity 0.5s ease ${index * 0.08}s, transform 0.5s ease ${index * 0.08}s, box-shadow 0.5s`
+              }}
             >
               <div className="flex items-center gap-3 mb-4 sm:mb-6">
                 <div className="p-2 rounded-xl bg-primary/10 text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300 group-hover:scale-110 group-hover:rotate-6">
@@ -134,7 +156,7 @@ const Skills = () => {
                 ))}
               </div>
             </div>
-          ))}
+          );})}
         </div>
       </div>
     </section>

@@ -24,7 +24,7 @@ All colors MUST be HSL.
     --secondary-foreground: 210 40% 98%;
 
     --muted: 220 30% 18%;
-    --muted-foreground: 220 20% 70%;
+    --muted-foreground: 220 15% 82%;
 
     --accent: 145 65% 50%;
     --accent-foreground: 220 45% 8%;
@@ -70,6 +70,12 @@ All colors MUST be HSL.
   .dark {
     --background: 220 25% 8%;
     --foreground: 210 40% 98%;
+    --gradient-sky: linear-gradient(180deg, hsl(220 45% 8%) 0%, hsl(215 50% 15%) 40%, hsl(210 55% 25%) 100%);
+    --gradient-mesh: linear-gradient(180deg, hsl(220 50% 10%) 0%, hsl(215 45% 15%) 50%, hsl(210 40% 20%) 100%);
+    --glass-bg: hsla(220 40% 12% / 0.6);
+    --glass-border: hsla(45 95% 58% / 0.15);
+    --shadow-glow: 0 0 40px hsla(45 95% 58% / 0.25);
+    --shadow-elegant: 0 10px 30px -10px hsla(0 0% 0% / 0.5);
   }
 }
 
