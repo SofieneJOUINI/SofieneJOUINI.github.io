@@ -15,7 +15,7 @@ const About = () => {
         {/* Digital Wallet Container */}
         <div className="relative animate-fade-in">
           {/* Main wallet card */}
-          <div className="relative bg-gradient-to-br from-card via-card to-muted/50 backdrop-blur-xl rounded-3xl overflow-hidden">
+          <div className="relative card-surface rounded-3xl overflow-hidden">
             
             {/* Glassmorphism overlay effect */}
             <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-accent/5 pointer-events-none" />

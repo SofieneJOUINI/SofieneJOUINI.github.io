@@ -58,13 +58,13 @@ function pathTangent(segments: Segment[], t: number): Vec2 {
 
 function buildSCurve(w: number, h: number): { segments: Segment[]; waypoints: Waypoint[] } {
   const pts: Vec2[] = [
-    { x: w * 0.12, y: h * 0.08 },
-    { x: w * 0.75, y: h * 0.18 },
-    { x: w * 0.85, y: h * 0.35 },
-    { x: w * 0.50, y: h * 0.50 },
-    { x: w * 0.15, y: h * 0.65 },
-    { x: w * 0.25, y: h * 0.82 },
-    { x: w * 0.80, y: h * 0.92 },
+    { x: w * 0.11, y: h * 0.06 },  // TUN — top left
+    { x: w * 0.81, y: h * 0.17 },  // CDG — right, higher up
+    { x: w * 0.19, y: h * 0.28 },  // LON — left, closer to CDG vertically
+    { x: w * 0.82, y: h * 0.47 },  // DXB — right, big vertical gap
+    { x: w * 0.13, y: h * 0.58 },  // IST — left, small gap
+    { x: w * 0.85, y: h * 0.72 },  // NYC — right, medium gap
+    { x: w * 0.17, y: h * 0.93 },  // JFK — left, big gap to bottom
   ];
 
   // Catmull-Rom → cubic Bézier

@@ -10,21 +10,6 @@ import {
 } from "lucide-react";
 import { profileConfig, uiConfig, themeConfig } from "@/config/profileData";
 import { Badge } from "@/components/ui/badge";
-import { useEffect, useRef, useState } from "react";
-
-function useReveal() {
-  const ref = useRef<HTMLDivElement>(null);
-  const [visible, setVisible] = useState(false);
-  useEffect(() => {
-    const obs = new IntersectionObserver(
-      ([e]) => { if (e.isIntersecting) { setVisible(true); obs.disconnect(); } },
-      { threshold: 0.12 }
-    );
-    if (ref.current) obs.observe(ref.current);
-    return () => obs.disconnect();
-  }, []);
-  return { ref, visible };
-}
 
 const Experience = () => {
   const { experience: experienceUI } = uiConfig;
@@ -53,18 +38,11 @@ const Experience = () => {
           <div className="hidden sm:block absolute left-[30px] top-0 w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
           
           <div className="space-y-6 sm:space-y-8">
-            {profileConfig.experience.map((exp, index) => {
-              const { ref, visible } = useReveal();
-              return (
+            {profileConfig.experience.map((exp, index) => (
               <div 
-                key={exp.id}
-                ref={ref}
-                className="relative sm:pl-20 group"
-                style={{
-                  opacity: visible ? 1 : 0,
-                  transform: visible ? "translateX(0)" : "translateX(-24px)",
-                  transition: `opacity 0.5s ease ${index * 0.08}s, transform 0.5s ease ${index * 0.08}s`
-                }}
+                key={exp.id} 
+                className="relative sm:pl-20 animate-fade-in group"
+                style={{ animationDelay: `${index * 0.15}s` }}
               >
                 {/* Timeline node */}
                 <div className="hidden sm:flex absolute left-4 top-6 w-9 h-9 rounded-full bg-gradient-to-br from-primary/30 to-background border-2 border-primary/60 ring-2 ring-primary/20 ring-offset-2 ring-offset-background items-center justify-center group-hover:scale-110 group-hover:border-primary group-hover:ring-primary/40 transition-all duration-300 group-hover:shadow-[var(--shadow-glow)] z-10">
@@ -124,7 +102,7 @@ const Experience = () => {
                   </div>
                 </div>
               </div>
-            );})}
+            ))}
           </div>
         </div>
       </div>

@@ -32,15 +32,16 @@ const Contact = () => {
 
   return (
     <section id="contact" className="py-12 sm:py-20 px-4 sm:px-6 relative overflow-hidden scroll-mt-20">
-      {/* Sky-themed background elements */}
+      {/* Airline-themed background elements */}
       <div className="absolute inset-0 pointer-events-none">
-        <svg className="absolute inset-0 w-full h-full opacity-[0.04]" viewBox="0 0 100 100" preserveAspectRatio="none">
+        {/* Flight path lines */}
+        <svg className="absolute inset-0 w-full h-full opacity-5" viewBox="0 0 100 100" preserveAspectRatio="none">
           <path
             d="M0,50 Q25,20 50,50 T100,50"
             fill="none"
             stroke="currentColor"
             strokeWidth="0.2"
-            className="text-foreground"
+            className="text-primary"
             strokeDasharray="2,2"
           />
           <path
@@ -48,10 +49,15 @@ const Contact = () => {
             fill="none"
             stroke="currentColor"
             strokeWidth="0.15"
-            className="text-foreground"
+            className="text-primary"
             strokeDasharray="1,3"
           />
         </svg>
+        
+        {/* Floating plane icons */}
+        <Plane className="absolute top-10 right-[15%] w-8 h-8 text-primary/10 rotate-45 animate-pulse" />
+        <CreditCard className="absolute bottom-20 left-[10%] w-6 h-6 text-primary/10 -rotate-12" />
+        <Plane className="absolute top-1/3 left-[5%] w-5 h-5 text-primary/5 -rotate-45" />
       </div>
 
       <div className="max-w-5xl mx-auto relative z-10">
@@ -138,7 +144,7 @@ const Contact = () => {
                 </div>
                 
                 <div className="flex-1 mx-4 sm:mx-8 relative">
-                  <div className="border-t-2 border-dashed border-muted-foreground/20" />
+                  <div className="border-t-2 border-dashed border-primary/30" />
                   <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
                     <div className="bg-background p-2 rounded-full">
                       <img 
