@@ -93,58 +93,43 @@ export const profileConfig = {
   hero: {
     name: "Sofiene JOUINI",
     title: "Senior Software Engineer",
-    description: "I design and develop scalable, maintainable systems for the airline IT industry, focused on payment management and accounting systems.",
+    description: "Senior software engineer with experience delivering payment reconciliation and accounting solutions in the airline industry. Grew from hands-on development to leading backend and frontend engineering teams, driving technical decisions and implementation across the full product lifecycle.",
     profileImage: "/src/assets/hero-portrait.jpeg"
   },
 
   // ========== ABOUT SECTION ==========
   about: {
     paragraphs: [
-      "I'm a software engineering leader with 7+ years of experience in the airline industry, working continuously within the same organization. My journey started with hands-on development and evolved into leading and coordinating engineering teams across complex payment and accounting domains.",
-      "I'm working on scalable, modular solutions handling millions of airline sales, payment, and accounting transactions, with a strong focus on clean architecture and domain-driven design.",
-      "Currently leading backend and frontend teams, working closely with DevOps, Architecture, and Product teams to align efforts and meet delivery targets."
+      "Senior software engineer at M&C since 2018, progressively taking on more complex responsibilities across payment reconciliation and airline accounting systems.",
+      "Work on backend-heavy systems processing airline sales, payment, and accounting transactions, with a strong focus on clean architecture and domain-driven design.",
+      "Currently leading backend and frontend teams, coordinating with DevOps, Architecture, and Product to keep delivery on track."
     ]
   },
 
   // ========== EXPERIENCE SECTION ==========
   experience: [
     {
-      id: "senior-manager",
-      title: "Senior Application Manager",
+      id: "senior-lead",
+      title: "Senior Software Engineer (Team Lead)",
       company: "M&C",
-      period: "Aug 2025 - Present",
-      description: "Manage and coordinate backend and frontend teams working on the project.",
+      period: "Jan 2024 - Present",
+      description: "Took on technical leadership in Adad, leading and synchronizing backend and frontend teams to design and deliver clean, well-architected solutions around payment reconciliation and accounting in the airline industry.",
       achievements: [
-        "Guiding team leads to maintain efficient collaboration and delivery",
-        "Working with DevOps, Architecture, and Product teams to align efforts",
-        "Collaborating with the Product team to align the roadmap and meet delivery targets",
-        "Reviewing and approving technical and change requests"
-      ]
-    },
-    {
-      id: "team-lead",
-      title: "Team Lead – Software Engineering",
-      company: "M&C",
-      period: "Jan 2024 - Jul 2025",
-      description: "Leading a development team to design and deliver clean, well-architected solutions addressing payment reconciliation and accounting challenges in the airline industry.",
-      achievements: [
-        "Team leadership, mentorship, and agile facilitation",
-        "Technical guidance and cross-team collaboration",
-        "Implementing Clean Architecture and Clean Code principles",
-        "Design patterns and component principles"
+        "Along the way, built solid functional expertise in payment reconciliation and airline finance, which helped a lot in translating business needs into the right technical decisions.",
+        "Provided guidance and mentorship across the team, and made sure clean architecture, clean code, and design patterns were applied consistently.",
+        "Coordinated with DevOps during releases, collaborated with the Architecture team on design decisions and technical evolution, and worked with the Product team on roadmap alignment."
       ]
     },
     {
       id: "software-engineer",
-      title: "Software Engineer",
+      title: "Software Engineer - Adad (Payment Reconciliation Platform)",
       company: "M&C",
       period: "Apr 2022 - Dec 2023",
-      description: "Developing a payment reconciliation platform for the airline industry using a scalable architecture and delivering clean, maintainable, and reliable code.",
+      description: "ADAD is an agnostic end-to-end payment reconciliation platform for the airline industry, connecting with airlines' payment and finance ecosystems to automate the validation and reconciliation of transactions across multiple payment providers, bank accounts, and platforms. A SaaS product that brings real structure to a traditionally complex and manual process, currently live in production with several international carriers and being rolled out to more.",
       achievements: [
-        "Implementing Domain-Driven Design (DDD) and Hexagonal Architecture",
-        "Event-Driven Architecture with ActiveMQ",
-        "Building REST APIs and ETL pipelines",
-        "Data visualization and KPI dashboards development"
+        "Involved in the full product lifecycle, from inception to delivery. Worked in an Agile environment using Scrum and Jira, designing and building ETL pipelines, REST APIs, and services around a Hexagonal, Event-Driven SOA architecture with ActiveMQ as the messaging broker.",
+        "Implemented using TypeScript, NestJS, Java, Spring Reactive, and Angular, backed by PostgreSQL and MongoDB with Redis for caching, deployed on AWS. Practiced DDD, TDD, and Reactive Programming throughout, with a constant focus on clean, maintainable, and reliable code.",
+        "Also contributed to data analytics, KPI dashboards, and data visualization, bringing visibility into reconciliation outcomes and financial reporting."
       ]
     },
     {
@@ -152,17 +137,14 @@ export const profileConfig = {
       title: "Software Engineer – Amadeus Revenue Accounting",
       company: "M&C",
       period: "Oct 2018 - Mar 2022",
-      description: "Support, operations, maintenance, and recovery tasks within Amadeus ecosystem.",
+      description: "Amadeus Revenue Accounting is a platform that manages airline passenger revenue accounting from real-time sales and usage recording to ticket auditing, interline billing, and financial settlement between airlines.",
       achievements: [
-        "Gaining hands-on experience in airline accounting and interline operations",
-        "Developing automation solutions to streamline processes",
-        "Supporting production systems and incident resolution",
-        "Building airline industry domain expertise"
+        "Worked on support, operations, maintenance, and recovery tasks in this environment, picking up solid knowledge of airline IT, airline accounting, and interline operations, and built tools to automate some of the manual processes along the way."
       ]
     },
     {
       id: "internship",
-      title: "Graduation Project – Software Engineer",
+      title: "Software Engineering Intern",
       company: "M&C (Internship)",
       period: "Mar 2018 - Jul 2018",
       description: "Designed and developed a software solution for HouseCab, a chauffeur-driven tourism vehicle company.",
@@ -201,7 +183,7 @@ export const profileConfig = {
       {
         id: "data",
         title: "Data & Databases",
-        skills: ["SQL", "MongoDB", "NoSQL", "ETL", "Analytics", "KPI Dashboards", "Python", "Pandas"]
+        skills: ["PostgreSQL", "MongoDB", "ETL", "Analytics", "KPI Dashboards", "Python", "Pandas"]
       },
       {
         id: "domain",
@@ -282,7 +264,7 @@ export const profileConfig = {
   // ========== CONTACT SECTION ==========
   contact: {
     email: "jouinisofiene@gmail.com",
-    phone: "+216 XX XXX XXX",
+    phone: "+216 96 842 492",
     location: "Tunis, Tunisia"
   }
 };
@@ -291,7 +273,7 @@ export const profileConfig = {
 export const themeConfig = {
   // Experience role styling (maps experience id to gradient)
   experienceColors: {
-    "senior-manager": "from-primary to-primary/60",
+    "senior-lead": "from-primary to-primary/60",
     "team-lead": "from-primary/80 to-primary/40",
     "software-engineer": "from-primary/60 to-primary/30",
     "amadeus-engineer": "from-primary/50 to-primary/20",

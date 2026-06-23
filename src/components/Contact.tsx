@@ -1,4 +1,4 @@
-import { Mail, MapPin, Phone, Plane, Send, CreditCard } from "lucide-react";
+import { Mail, MapPin, Phone, Plane, Send } from "lucide-react";
 import { profileConfig, uiConfig } from "@/config/profileData";
 import paperPlane from "@/assets/paper-plane.png";
 
@@ -32,34 +32,6 @@ const Contact = () => {
 
   return (
     <section id="contact" className="py-12 sm:py-20 px-4 sm:px-6 relative overflow-hidden scroll-mt-20">
-      {/* Airline-themed background elements */}
-      <div className="absolute inset-0 pointer-events-none">
-        {/* Flight path lines */}
-        <svg className="absolute inset-0 w-full h-full opacity-5" viewBox="0 0 100 100" preserveAspectRatio="none">
-          <path
-            d="M0,50 Q25,20 50,50 T100,50"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="0.2"
-            className="text-primary"
-            strokeDasharray="2,2"
-          />
-          <path
-            d="M0,70 Q30,40 60,70 T100,70"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="0.15"
-            className="text-primary"
-            strokeDasharray="1,3"
-          />
-        </svg>
-        
-        {/* Floating plane icons */}
-        <Plane className="absolute top-10 right-[15%] w-8 h-8 text-primary/10 rotate-45 animate-pulse" />
-        <CreditCard className="absolute bottom-20 left-[10%] w-6 h-6 text-primary/10 -rotate-12" />
-        <Plane className="absolute top-1/3 left-[5%] w-5 h-5 text-primary/5 -rotate-45" />
-      </div>
-
       <div className="max-w-5xl mx-auto relative z-10">
         {/* Header with boarding pass style */}
         <div className="text-center mb-12 sm:mb-16">
@@ -70,9 +42,6 @@ const Contact = () => {
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
             {contactUI.sectionTitle} <span className="text-gradient">{contactUI.sectionTitleHighlight}</span>
           </h2>
-          <p className="text-muted-foreground max-w-md mx-auto">
-            {contactUI.description}
-          </p>
         </div>
 
         {/* Boarding Pass Card */}

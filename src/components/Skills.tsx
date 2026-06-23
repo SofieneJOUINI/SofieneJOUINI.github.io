@@ -68,9 +68,8 @@ const Skills = () => {
     "Jira": <MonitorDot className="w-5 h-5" />,
     "Scrum": <Activity className="w-5 h-5" />,
     // Data & Databases
-    "SQL": <Database className="w-5 h-5" />,
+    "PostgreSQL": <Database className="w-5 h-5" />,
     "MongoDB": <Database className="w-5 h-5" />,
-    "NoSQL": <Database className="w-5 h-5" />,
     "ETL": <Workflow className="w-5 h-5" />,
     "Analytics": <BarChart3 className="w-5 h-5" />,
     "KPI Dashboards": <Gauge className="w-5 h-5" />,
