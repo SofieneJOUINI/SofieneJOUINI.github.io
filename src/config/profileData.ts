@@ -110,7 +110,7 @@ export const profileConfig = {
   experience: [
     {
       id: "senior-manager",
-      title: "Senior Application Manager",
+      title: "Senior Application Engineer",
       company: "M&C",
       period: "Aug 2025 - Present",
       description: "Manage and coordinate backend and frontend teams working on the project.",

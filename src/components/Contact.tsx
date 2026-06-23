@@ -1,6 +1,6 @@
 import { Mail, MapPin, Phone, Plane, Send, CreditCard } from "lucide-react";
 import { profileConfig, uiConfig } from "@/config/profileData";
-import paperPlane from "@/assets/paper-plane.png";
+import airplaneSrc from "@/assets/airplane-top.png";
 
 const Contact = () => {
   const { contact: contactUI } = uiConfig;
@@ -148,7 +148,7 @@ const Contact = () => {
                   <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
                     <div className="bg-background p-2 rounded-full">
                       <img 
-                        src={paperPlane} 
+                        src={airplaneSrc} 
                         alt="Paper plane" 
                         className="w-8 h-8 sm:w-10 sm:h-10 object-contain animate-pulse"
                       />

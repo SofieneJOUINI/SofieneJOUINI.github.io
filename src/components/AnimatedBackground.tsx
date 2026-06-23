@@ -1,5 +1,5 @@
 import { useEffect, useRef } from "react";
-import planeSrc from "@/assets/airplane-top.svg";
+import planeSrc from "@/assets/airplane-top.png";
 import cloudSrc from "@/assets/cloud.png";
 
 // ─── TYPES ───────────────────────────────────────────────────────────────────
