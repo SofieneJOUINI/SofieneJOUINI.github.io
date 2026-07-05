@@ -155,7 +155,7 @@ const CardNavigation = ({ sections }: CardNavigationProps) => {
   }, [sections, isAnimating]);
 
   return (
-    <div className="fixed right-8 top-1/2 -translate-y-1/2 z-50 flex flex-col items-center gap-4">
+    <div className="hidden lg:flex fixed right-6 xl:right-8 top-1/2 -translate-y-1/2 z-[60] flex-col items-center gap-4">
       {/* Credit Card with Swipe */}
       <div
         onTouchStart={handleTouchStart}

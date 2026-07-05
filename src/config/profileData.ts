@@ -71,6 +71,14 @@ export const uiConfig = {
   }
 };
 
+// ========== TECHNICAL NOTEBOOK ==========
+// A standalone link to external technical documentation (not a social link, not resume-related)
+export const technicalNotebook = {
+  label: "My Technical Notebook",
+  url: "https://sofienejouini.github.io/docs/index.html",
+  enabled: true
+};
+
 // ========== SOCIAL LINKS ==========
 export const socialLinks = {
   github: {

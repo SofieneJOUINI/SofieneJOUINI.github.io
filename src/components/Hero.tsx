@@ -1,7 +1,7 @@
-import { Github, Linkedin, Mail, ArrowDown, Sparkles } from "lucide-react";
+import { Github, Linkedin, Mail, ArrowDown, Sparkles, Notebook, ArrowUpRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import heroPortrait from "@/assets/hero-portrait.jpeg";
-import { profileConfig, uiConfig, socialLinks } from "@/config/profileData";
+import { profileConfig, uiConfig, socialLinks, technicalNotebook } from "@/config/profileData";
 
 const Hero = () => {
   const { hero: heroUI } = uiConfig;
@@ -61,7 +61,7 @@ const Hero = () => {
             ))}
           </div>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start mb-8 md:mb-10">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start mb-4 md:mb-5">
             <Button 
               size="lg" 
               className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-[0_10px_30px_-10px_hsl(var(--primary)/0.5)] hover:shadow-[0_15px_40px_-10px_hsl(var(--primary)/0.6)] transition-all duration-300 w-full sm:w-auto group"
@@ -105,6 +105,32 @@ const Hero = () => {
               </div>
             </div>
           </div>
+
+          {/* Technical Notebook link — standalone, not a social link, not resume-related */}
+          {technicalNotebook.enabled && (
+            <div className="mb-4 flex justify-center md:justify-start">
+              <a
+                href={technicalNotebook.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group/notebook relative inline-flex items-center gap-3 pl-2 pr-5 py-1.5 rounded-full border border-primary/25 bg-gradient-to-r from-primary/[0.07] via-primary/[0.03] to-transparent backdrop-blur-sm overflow-hidden hover:border-primary/50 hover:scale-[1.03] hover:shadow-[0_8px_30px_-8px_hsl(var(--primary)/0.5)] transition-all duration-300"
+              >
+                {/* Shimmer sweep on hover */}
+                <span className="pointer-events-none absolute inset-0 -translate-x-full group-hover/notebook:translate-x-full transition-transform duration-1000 ease-out bg-gradient-to-r from-transparent via-primary/15 to-transparent" />
+
+                {/* Icon badge */}
+                <span className="relative z-10 flex items-center justify-center w-8 h-8 rounded-full bg-gradient-to-br from-primary/25 to-primary/5 group-hover/notebook:from-primary group-hover/notebook:to-primary/70 shadow-[0_0_0_1px_hsl(var(--primary)/0.15)] transition-all duration-300 group-hover/notebook:rotate-[8deg]">
+                  <Notebook className="w-4 h-4 text-primary group-hover/notebook:text-primary-foreground transition-colors duration-300" />
+                </span>
+
+                <span className="relative z-10 text-sm sm:text-base font-medium text-foreground/80 group-hover/notebook:text-gradient transition-all duration-300">
+                  {technicalNotebook.label}
+                </span>
+
+                <ArrowUpRight className="relative z-10 w-4 h-4 text-primary/60 -translate-x-1 opacity-70 group-hover/notebook:opacity-100 group-hover/notebook:translate-x-0.5 group-hover/notebook:-translate-y-0.5 transition-all duration-300" />
+              </a>
+            </div>
+          )}
           
           {/* Social links */}
           <div className="flex gap-3 justify-center md:justify-start">
