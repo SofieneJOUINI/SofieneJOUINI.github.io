@@ -113,7 +113,7 @@ const Hero = () => {
                 href={technicalNotebook.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group/notebook relative inline-flex items-center gap-3 pl-2 pr-5 py-1.5 rounded-full border border-primary/25 bg-gradient-to-r from-primary/[0.07] via-primary/[0.03] to-transparent backdrop-blur-sm overflow-hidden hover:border-primary/50 hover:scale-[1.03] hover:shadow-[0_8px_30px_-8px_hsl(var(--primary)/0.5)] transition-all duration-300"
+                className="group/notebook relative inline-flex items-center gap-3 pl-2 pr-5 py-1.5 rounded-full border border-primary/30 bg-primary/15 backdrop-blur-sm overflow-hidden hover:bg-primary/25 hover:border-primary/50 hover:scale-[1.03] hover:shadow-[0_8px_30px_-8px_hsl(var(--primary)/0.5)] transition-all duration-300"
               >
                 {/* Shimmer sweep on hover */}
                 <span className="pointer-events-none absolute inset-0 -translate-x-full group-hover/notebook:translate-x-full transition-transform duration-1000 ease-out bg-gradient-to-r from-transparent via-primary/15 to-transparent" />

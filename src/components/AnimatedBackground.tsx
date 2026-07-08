@@ -327,9 +327,9 @@ const AnimatedBackground = () => {
 
       // ── Sky ──
       const sky = ctx.createLinearGradient(0, 0, 0, h);
-      sky.addColorStop(0,   "hsl(220,45%,6%)");
-      sky.addColorStop(0.5, "hsl(222,48%,11%)");
-      sky.addColorStop(1,   "hsl(218,52%,16%)");
+      sky.addColorStop(0,   "hsl(222,55%,16%)");
+      sky.addColorStop(0.5, "hsl(215,60%,24%)");
+      sky.addColorStop(1,   "hsl(205,65%,34%)");
       ctx.fillStyle = sky;
       ctx.fillRect(0, 0, w, h);
 
@@ -353,7 +353,7 @@ const AnimatedBackground = () => {
             const cy = cl.y;
             ctx.save();
             ctx.globalAlpha = cl.opacity;
-            ctx.filter      = "brightness(0.85) saturate(0.7) hue-rotate(10deg)";
+            ctx.filter      = "brightness(1.15) saturate(1.25) hue-rotate(0deg)";
             if (cl.flipX) {
               ctx.translate(cl.x + cl.w, cy);
               ctx.scale(-1, 1);
@@ -385,18 +385,29 @@ const AnimatedBackground = () => {
 
     frameId = requestAnimationFrame(tick);
 
+    let resizeDebounce: ReturnType<typeof setTimeout> | undefined;
     const onResize = () => {
+      // Keep the canvas crisp immediately (cheap)
       w = window.innerWidth; h = window.innerHeight;
       canvas.width = w; canvas.height = h;
-      const rebuilt = buildSCurve(w, h);
-      segments  = rebuilt.segments;
-      waypoints = rebuilt.waypoints;
-      if (cloudReady) buildClouds();
+
+      // Defer the expensive rebuild (path + cloud re-randomization) until
+      // the resize has settled, otherwise every intermediate resize event
+      // fired while dragging the window edge spawns a fresh random batch
+      // of clouds, which looks like many clouds flickering in at once.
+      if (resizeDebounce) clearTimeout(resizeDebounce);
+      resizeDebounce = setTimeout(() => {
+        const rebuilt = buildSCurve(w, h);
+        segments  = rebuilt.segments;
+        waypoints = rebuilt.waypoints;
+        if (cloudReady) buildClouds();
+      }, 200);
     };
     window.addEventListener("resize", onResize);
 
     return () => {
       cancelAnimationFrame(frameId);
+      if (resizeDebounce) clearTimeout(resizeDebounce);
       window.removeEventListener("resize", onResize);
     };
   }, []);

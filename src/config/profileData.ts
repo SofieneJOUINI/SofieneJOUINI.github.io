@@ -101,14 +101,14 @@ export const profileConfig = {
   hero: {
     name: "Sofiene JOUINI",
     title: "Senior Software Engineer",
-    description: "Senior software engineer with experience delivering payment reconciliation and accounting solutions in the airline industry. Grew from hands-on development to leading backend and frontend engineering teams, driving technical decisions and implementation across the full product lifecycle.",
+    description: "Delivering payment reconciliation and accounting solutions for the airline industry.\nProgressed from hands-on development to leading backend and frontend engineering teams, driving technical decisions across the full product lifecycle.",
     profileImage: "/src/assets/hero-portrait.jpeg"
   },
 
   // ========== ABOUT SECTION ==========
   about: {
     paragraphs: [
-      "Senior software engineer at M&C since 2018, progressively taking on more complex responsibilities across payment reconciliation and airline accounting systems.",
+      "Senior Software Engineer at M&C since 2018, evolving from a developer role into a technical leadership position, contributing to the implementation of complex payment reconciliation and accounting solutions for airlines.",
       "Work on backend-heavy systems processing airline sales, payment, and accounting transactions, with a strong focus on clean architecture and domain-driven design.",
       "Currently leading backend and frontend teams, coordinating with DevOps, Architecture, and Product to keep delivery on track."
     ]
@@ -136,8 +136,7 @@ export const profileConfig = {
       description: "ADAD is an agnostic end-to-end payment reconciliation platform for the airline industry, connecting with airlines' payment and finance ecosystems to automate the validation and reconciliation of transactions across multiple payment providers, bank accounts, and platforms. A SaaS product that brings real structure to a traditionally complex and manual process, currently live in production with several international carriers and being rolled out to more.",
       achievements: [
         "Involved in the full product lifecycle, from inception to delivery. Worked in an Agile environment using Scrum and Jira, designing and building ETL pipelines, REST APIs, and services around a Hexagonal, Event-Driven SOA architecture with ActiveMQ as the messaging broker.",
-        "Implemented using TypeScript, NestJS, Java, Spring Reactive, and Angular, backed by PostgreSQL and MongoDB with Redis for caching, deployed on AWS. Practiced DDD, TDD, and Reactive Programming throughout, with a constant focus on clean, maintainable, and reliable code.",
-        "Also contributed to data analytics, KPI dashboards, and data visualization, bringing visibility into reconciliation outcomes and financial reporting."
+        "Built with Angular on the frontend and NestJS and Spring Reactive on the backend, using PostgreSQL and MongoDB as data stores, Redis for caching, and AWS for cloud deployment. Applied DDD, TDD, and Reactive Programming principles to deliver clean, maintainable, and reliable software.",
       ]
     },
     {

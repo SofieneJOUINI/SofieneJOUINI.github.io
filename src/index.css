@@ -8,48 +8,52 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 220 45% 8%;
+    /* Base page color — MUST stay identical to the Loader background
+       and to the first stop of --gradient-sky / the canvas sky gradient
+       in AnimatedBackground.tsx so the loading screen and the page
+       background are always the exact same color. */
+    --background: 222 55% 16%;
     --foreground: 210 40% 98%;
 
-    --card: 220 40% 8%;
+    --card: 222 50% 18%;
     --card-foreground: 210 40% 98%;
-    --card-alpha: hsla(220, 40%, 8%, 0.45);
+    --card-alpha: hsla(222, 50%, 18%, 0.45);
 
-    --popover: 220 40% 12%;
+    --popover: 222 50% 22%;
     --popover-foreground: 210 40% 98%;
 
-    --primary: 45 95% 58%;
-    --primary-foreground: 220 45% 8%;
+    --primary: 45 100% 62%;
+    --primary-foreground: 222 55% 12%;
 
-    --secondary: 210 85% 55%;
+    --secondary: 205 95% 60%;
     --secondary-foreground: 210 40% 98%;
 
-    --muted: 220 30% 18%;
-    --muted-foreground: 220 15% 82%;
+    --muted: 222 30% 26%;
+    --muted-foreground: 220 18% 88%;
 
-    --accent: 145 65% 50%;
-    --accent-foreground: 220 45% 8%;
+    --accent: 155 80% 55%;
+    --accent-foreground: 222 55% 12%;
 
-    --destructive: 0 84.2% 60.2%;
+    --destructive: 0 90% 62%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 220 30% 18%;
-    --input: 220 30% 18%;
-    --ring: 45 95% 58%;
+    --border: 222 30% 28%;
+    --input: 222 30% 28%;
+    --ring: 45 100% 62%;
 
     --radius: 0.75rem;
     
-    --gradient-primary: linear-gradient(135deg, hsl(45 95% 58%) 0%, hsl(38 92% 50%) 100%);
-    --gradient-mesh: linear-gradient(180deg, hsl(220 50% 10%) 0%, hsl(215 45% 15%) 50%, hsl(210 40% 20%) 100%);
-    --gradient-sky: linear-gradient(180deg, hsl(220 45% 8%) 0%, hsl(215 50% 15%) 40%, hsl(210 55% 25%) 100%);
-    --gradient-revenue: linear-gradient(90deg, hsl(145 65% 50%) 0%, hsl(45 95% 58%) 50%, hsl(210 85% 55%) 100%);
-    --glass-bg: hsla(220 40% 8% / 0.35);
-    --glass-border: hsla(45 95% 58% / 0.20);
+    --gradient-primary: linear-gradient(135deg, hsl(45 100% 62%) 0%, hsl(35 100% 55%) 100%);
+    --gradient-mesh: linear-gradient(180deg, hsl(222 60% 20%) 0%, hsl(215 60% 27%) 50%, hsl(205 65% 36%) 100%);
+    --gradient-sky: linear-gradient(180deg, hsl(222 55% 16%) 0%, hsl(215 60% 24%) 40%, hsl(205 65% 34%) 100%);
+    --gradient-revenue: linear-gradient(90deg, hsl(155 80% 55%) 0%, hsl(45 100% 62%) 50%, hsl(205 95% 60%) 100%);
+    --glass-bg: hsla(222 50% 18% / 0.35);
+    --glass-border: hsla(45 100% 62% / 0.25);
     
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    --shadow-glow: 0 0 40px hsla(45 95% 58% / 0.25);
+    --shadow-glow: 0 0 40px hsla(45 100% 62% / 0.35);
     --shadow-elegant: 0 10px 30px -10px hsla(0 0% 0% / 0.5);
-    --shadow-financial: 0 4px 20px hsla(145 65% 50% / 0.2);
+    --shadow-financial: 0 4px 20px hsla(155 80% 55% / 0.3);
 
     --sidebar-background: 0 0% 98%;
 
@@ -69,13 +73,13 @@ All colors MUST be HSL.
   }
 
   .dark {
-    --background: 220 25% 8%;
+    --background: 222 55% 16%;
     --foreground: 210 40% 98%;
-    --gradient-sky: linear-gradient(180deg, hsl(220 45% 8%) 0%, hsl(215 50% 15%) 40%, hsl(210 55% 25%) 100%);
-    --gradient-mesh: linear-gradient(180deg, hsl(220 50% 10%) 0%, hsl(215 45% 15%) 50%, hsl(210 40% 20%) 100%);
-    --glass-bg: hsla(220 40% 8% / 0.35);
-    --glass-border: hsla(45 95% 58% / 0.20);
-    --shadow-glow: 0 0 40px hsla(45 95% 58% / 0.25);
+    --gradient-sky: linear-gradient(180deg, hsl(222 55% 16%) 0%, hsl(215 60% 24%) 40%, hsl(205 65% 34%) 100%);
+    --gradient-mesh: linear-gradient(180deg, hsl(222 60% 20%) 0%, hsl(215 60% 27%) 50%, hsl(205 65% 36%) 100%);
+    --glass-bg: hsla(222 50% 18% / 0.35);
+    --glass-border: hsla(45 100% 62% / 0.25);
+    --shadow-glow: 0 0 40px hsla(45 100% 62% / 0.35);
     --shadow-elegant: 0 10px 30px -10px hsla(0 0% 0% / 0.5);
   }
 }
@@ -92,9 +96,9 @@ All colors MUST be HSL.
   .card-surface {
     background: linear-gradient(
       135deg,
-      hsla(220, 40%, 8%, 0.22) 0%,
-      hsla(220, 40%, 8%, 0.16) 60%,
-      hsla(220, 30%, 12%, 0.08) 100%
+      hsla(222, 50%, 18%, 0.28) 0%,
+      hsla(222, 50%, 18%, 0.20) 60%,
+      hsla(222, 40%, 24%, 0.10) 100%
     );
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
