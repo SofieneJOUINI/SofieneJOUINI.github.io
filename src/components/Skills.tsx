@@ -28,7 +28,8 @@ import {
   PieChart,
   Calculator,
   Globe,
-  Brain
+  Brain,
+  BookOpen
 } from "lucide-react";
 import { profileConfig, uiConfig } from "@/config/profileData";
 
@@ -58,14 +59,19 @@ const Skills = () => {
     "Event-Driven Architecture": <Workflow className="w-5 h-5" />,
     "TDD": <FlaskConical className="w-5 h-5" />,
     "Design Patterns": <Cog className="w-5 h-5" />,
-    // DevOps & Tools
+    // Infrastructure & Cloud
     "Docker": <Container className="w-5 h-5" />,
     "AWS": <Cloud className="w-5 h-5" />,
     "Linux": <Terminal className="w-5 h-5" />,
     "Shell Scripting": <Terminal className="w-5 h-5" />,
-    "Git": <GitBranch className="w-5 h-5" />,
     "CI/CD": <PackageCheck className="w-5 h-5" />,
+    // Networking
+    "CCNA1": <Network className="w-5 h-5" />,
+    "CCNA2": <Network className="w-5 h-5" />,
+    // Collaboration & Process
+    "Git": <GitBranch className="w-5 h-5" />,
     "Jira": <MonitorDot className="w-5 h-5" />,
+    "Confluence": <BookOpen className="w-5 h-5" />,
     "Scrum": <Activity className="w-5 h-5" />,
     // Data & Databases
     "PostgreSQL": <Database className="w-5 h-5" />,
@@ -87,7 +93,9 @@ const Skills = () => {
     "Frontend": <Layout className="w-6 h-6" />,
     "Backend": <Server className="w-6 h-6" />,
     "Architecture & Design": <Layers className="w-6 h-6" />,
-    "DevOps & Tools": <Container className="w-6 h-6" />,
+    "Infrastructure & Cloud": <Container className="w-6 h-6" />,
+    "Networking": <Network className="w-6 h-6" />,
+    "Collaboration & Process": <Workflow className="w-6 h-6" />,
     "Data & Databases": <Database className="w-6 h-6" />,
     "Domain Expertise": <Brain className="w-6 h-6" />
   };

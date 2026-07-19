@@ -108,7 +108,7 @@ export const profileConfig = {
   // ========== ABOUT SECTION ==========
   about: {
     paragraphs: [
-      "Senior Software Engineer at M&C since 2018, evolving from a developer role into a technical leadership position, contributing to the implementation of complex payment reconciliation and accounting solutions for airlines.",
+      "Senior Software Engineer at MnC since 2018, evolving from a developer role into a technical leadership position, contributing to the implementation of complex payment reconciliation and accounting solutions for airlines.",
       "Work on backend-heavy systems processing airline sales, payment, and accounting transactions, with a strong focus on clean architecture and domain-driven design.",
       "Currently leading backend and frontend teams, coordinating with DevOps, Architecture, and Product to keep delivery on track."
     ]
@@ -119,40 +119,42 @@ export const profileConfig = {
     {
       id: "senior-lead",
       title: "Senior Software Engineer (Team Lead)",
-      company: "M&C",
-      period: "Jan 2024 - Present",
-      description: "Took on technical leadership in Adad, leading and synchronizing backend and frontend teams to design and deliver clean, well-architected solutions around payment reconciliation and accounting in the airline industry.",
+      company: "MnC, adad",
+      description: "Took on technical leadership in adad, leading and synchronizing backend and frontend teams to design and deliver clean, well-architected solutions around payment reconciliation and accounting in the airline industry.",
       achievements: [
         "Along the way, built solid functional expertise in payment reconciliation and airline finance, which helped a lot in translating business needs into the right technical decisions.",
         "Provided guidance and mentorship across the team, and made sure clean architecture, clean code, and design patterns were applied consistently.",
         "Coordinated with DevOps during releases, collaborated with the Architecture team on design decisions and technical evolution, and worked with the Product team on roadmap alignment."
-      ]
+      ],
+      logos: ["mnc", "adad"]
     },
     {
       id: "software-engineer",
-      title: "Software Engineer - Adad (Payment Reconciliation Platform)",
-      company: "M&C",
+      title: "Software Engineer - adad (Payment Reconciliation Platform)",
+      company: "MnC, adad",
       period: "Apr 2022 - Dec 2023",
-      description: "ADAD is an agnostic end-to-end payment reconciliation platform for the airline industry, connecting with airlines' payment and finance ecosystems to automate the validation and reconciliation of transactions across multiple payment providers, bank accounts, and platforms. A SaaS product that brings real structure to a traditionally complex and manual process, currently live in production with several international carriers and being rolled out to more.",
+      description: "adad is an agnostic end-to-end payment reconciliation platform for the airline industry, connecting with airlines' payment and finance ecosystems to automate the validation and reconciliation of transactions across multiple payment providers, bank accounts, and platforms. A SaaS product that brings real structure to a traditionally complex and manual process, currently live in production with several international carriers and being rolled out to more.",
       achievements: [
         "Involved in the full product lifecycle, from inception to delivery. Worked in an Agile environment using Scrum and Jira, designing and building ETL pipelines, REST APIs, and services around a Hexagonal, Event-Driven SOA architecture with ActiveMQ as the messaging broker.",
         "Built with Angular on the frontend and NestJS and Spring Reactive on the backend, using PostgreSQL and MongoDB as data stores, Redis for caching, and AWS for cloud deployment. Applied DDD, TDD, and Reactive Programming principles to deliver clean, maintainable, and reliable software.",
-      ]
+      ],
+      logos: ["mnc", "adad"]
     },
     {
       id: "amadeus-engineer",
       title: "Software Engineer – Amadeus Revenue Accounting",
-      company: "M&C",
+      company: "MnC, Amadeus",
       period: "Oct 2018 - Mar 2022",
       description: "Amadeus Revenue Accounting is a platform that manages airline passenger revenue accounting from real-time sales and usage recording to ticket auditing, interline billing, and financial settlement between airlines.",
       achievements: [
         "Worked on support, operations, maintenance, and recovery tasks in this environment, picking up solid knowledge of airline IT, airline accounting, and interline operations, and built tools to automate some of the manual processes along the way."
-      ]
+      ],
+      logos: ["mnc", "amadeus"]
     },
     {
       id: "internship",
-      title: "Software Engineering Intern",
-      company: "M&C (Internship)",
+      title: "Software Engineering Intern – Graduation Project",
+      company: "MnC, HouseCab (Internship)",
       period: "Mar 2018 - Jul 2018",
       description: "Designed and developed a software solution for HouseCab, a chauffeur-driven tourism vehicle company.",
       achievements: [
@@ -160,7 +162,28 @@ export const profileConfig = {
         "Implemented MEAN stack (MongoDB, ExpressJS, Angular, NodeJS)",
         "Integrated WEBFLEET API and Google Maps API",
         "Data analysis with Python (Pandas) and ChartJS visualizations"
-      ]
+      ],
+      logos: ["mnc", "housecab"]
+    },
+    {
+      id: "business-technology-intern",
+      title: "Software Engineering Intern",
+      company: "Business Technology (Internship)",
+      period: "Jun 2017 - Jul 2017",
+      description: "Developed a small web application for document management within the company.",
+      achievements: [
+        "Environment: PHP, Symfony, Doctrine, Twig"
+      ],
+      logos: ["business-technology"]
+    },
+    {
+      id: "ben-arous-telecom",
+      title: "Software Engineering Intern",
+      company: "Tunisie Telecom (Internship)",
+      period: "Jun 2016 - Jul 2016",
+      description: "Worked on-site with the regional technical team, helping with day-to-day IT support and troubleshooting across the office equipment, and taking part in setting up, maintaining, and extending the network infrastructure across several local sites.",
+      achievements: [],
+      logos: ["tunisie-telecom"]
     }
   ],
 
@@ -183,9 +206,9 @@ export const profileConfig = {
         skills: ["Clean Architecture", "Domain-Driven Design", "Hexagonal Architecture", "Event-Driven Architecture", "TDD", "Design Patterns"]
       },
       {
-        id: "devops",
-        title: "DevOps & Tools",
-        skills: ["Docker", "AWS", "Linux", "Shell Scripting", "Git", "CI/CD", "Jira", "Scrum"]
+        id: "infrastructure",
+        title: "Infrastructure & Cloud",
+        skills: ["Docker", "AWS", "Linux", "Shell Scripting", "CI/CD"]
       },
       {
         id: "data",
@@ -196,6 +219,16 @@ export const profileConfig = {
         id: "domain",
         title: "Domain Expertise",
         skills: ["Airline Industry", "Revenue Accounting", "Payment Reconciliation", "Interline Operations", "Amadeus"]
+      },
+      {
+        id: "process",
+        title: "Collaboration & Process",
+        skills: ["Git", "Jira", "Confluence", "Scrum"]
+      },
+      {
+        id: "networking",
+        title: "Networking",
+        skills: ["CCNA1", "CCNA2"]
       }
     ]
   },
@@ -204,7 +237,7 @@ export const profileConfig = {
   projects: [
     {
       id: "adad",
-      title: "Adad",
+      title: "adad",
       description: "Scalable payment reconciliation platform for the airline industry with clean architecture and reliable processing.",
       tech: ["TypeScript", "Nest.js", "Spring Boot", "Java", "Postgres", "ActiveMQ"]
     },
@@ -284,7 +317,9 @@ export const themeConfig = {
     "team-lead": "from-primary/80 to-primary/40",
     "software-engineer": "from-primary/60 to-primary/30",
     "amadeus-engineer": "from-primary/50 to-primary/20",
-    "internship": "from-primary/40 to-primary/10"
+    "internship": "from-primary/40 to-primary/10",
+    "business-technology-intern": "from-primary/30 to-primary/5",
+    "ben-arous-telecom": "from-primary/20 to-primary/5"
   },
   
   // Project styling (maps project id to gradient)

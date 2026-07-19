@@ -4,12 +4,19 @@ import {
   Rocket, 
   Wrench, 
   Sparkles,
+  GraduationCap,
   ChevronRight,
   Calendar,
   Building2
 } from "lucide-react";
 import { profileConfig, uiConfig, themeConfig } from "@/config/profileData";
 import { Badge } from "@/components/ui/badge";
+import businessTechnologyLogo from "@/assets/business-technology-logo.jpeg";
+import tunisieTelecomLogo from "@/assets/tunisie-telecom-logo.png";
+import amadeusLogo from "@/assets/amadeus-logo.png";
+import mncLogo from "@/assets/mnc-logo.png";
+import adadLogo from "@/assets/adad-logo.png";
+import housecabLogo from "@/assets/housecab-logo.png";
 
 const Experience = () => {
   const { experience: experienceUI } = uiConfig;
@@ -20,8 +27,24 @@ const Experience = () => {
     "team-lead": <Target className="w-5 h-5" />,
     "software-engineer": <Rocket className="w-5 h-5" />,
     "amadeus-engineer": <Wrench className="w-5 h-5" />,
-    "internship": <Sparkles className="w-5 h-5" />
+    "internship": <GraduationCap className="w-5 h-5" />,
+    "business-technology-intern": <Sparkles className="w-5 h-5" />,
+    "ben-arous-telecom": <Sparkles className="w-5 h-5" />
   };
+
+  // Logo mapping - company logos shown for entries that have a `logo` field
+  const logoMap: Record<string, string> = {
+    "business-technology": businessTechnologyLogo,
+    "tunisie-telecom": tunisieTelecomLogo,
+    "amadeus": amadeusLogo,
+    "mnc": mncLogo,
+    "adad": adadLogo,
+    "housecab": housecabLogo
+  };
+
+  // Logos that already have their own solid, edge-to-edge background
+  // (no white padding needed - would just add an unwanted white margin)
+  const filledLogos = new Set(["mnc"]);
 
   return (
     <section id="experience" className="py-8 sm:py-12 px-4 sm:px-6 scroll-mt-20">
@@ -63,20 +86,47 @@ const Experience = () => {
                       {roleIcons[exp.id] || <Rocket className="w-5 h-5" />}
                     </div>
                     
-                    <div className="flex flex-col gap-2">
-                      <h3 className="text-lg sm:text-xl font-bold text-foreground pr-12 sm:pr-0">
-                        {exp.title}
-                      </h3>
-                      
-                      <div className="flex flex-wrap items-center gap-3 text-sm">
-                        <Badge variant="secondary" className="gap-1.5 bg-primary/10 hover:bg-primary/20">
-                          <Building2 className="w-3.5 h-3.5" />
-                          {exp.company}
-                        </Badge>
-                        <Badge variant="outline" className="gap-1.5 border-primary/30">
-                          <Calendar className="w-3.5 h-3.5" />
-                          {exp.period}
-                        </Badge>
+                    <div className="flex items-start gap-3 sm:gap-4">
+                      {/* Company logo(s) - entries can show one or several (e.g. employer + product) */}
+                      {exp.logos && exp.logos.length > 0 && (
+                        <div className="flex-shrink-0 flex flex-row gap-2">
+                          {exp.logos.map((logoId) => {
+                            const isFilled = filledLogos.has(logoId);
+                            return (
+                              <div
+                                key={logoId}
+                                className={`w-12 h-12 sm:w-14 sm:h-14 rounded-xl overflow-hidden shadow-sm transition-transform duration-300 group-hover:scale-105 ${
+                                  isFilled
+                                    ? ""
+                                    : "bg-white border border-border/30 flex items-center justify-center p-0.5"
+                                }`}
+                              >
+                                <img
+                                  src={logoMap[logoId]}
+                                  alt={exp.company}
+                                  className={isFilled ? "w-full h-full object-cover" : "w-full h-full object-contain"}
+                                />
+                              </div>
+                            );
+                          })}
+                        </div>
+                      )}
+
+                      <div className="flex flex-col gap-2 flex-1 min-w-0">
+                        <h3 className="text-lg sm:text-xl font-bold text-foreground pr-12 sm:pr-0">
+                          {exp.title}
+                        </h3>
+
+                        <div className="flex flex-wrap items-center gap-3 text-sm">
+                          <Badge variant="secondary" className="gap-1.5 bg-primary/10 hover:bg-primary/20">
+                            <Building2 className="w-3.5 h-3.5" />
+                            {exp.company}
+                          </Badge>
+                          <Badge variant="outline" className="gap-1.5 border-primary/30">
+                            <Calendar className="w-3.5 h-3.5" />
+                            {exp.period}
+                          </Badge>
+                        </div>
                       </div>
                     </div>
                   </div>
