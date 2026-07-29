@@ -91,14 +91,30 @@ const Hero = () => {
                 Download Resume
                 <svg xmlns="http://www.w3.org/2000/svg" className="w-3.5 h-3.5 ml-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><polyline points="6 9 12 15 18 9"/></svg>
               </Button>
-              <div className="absolute left-0 top-full mt-2 w-44 rounded-xl border border-primary/20 bg-card/95 backdrop-blur-xl shadow-lg opacity-0 invisible group-hover/cv:opacity-100 group-hover/cv:visible transition-all duration-200 z-50 overflow-hidden">
+              <div className="absolute left-0 top-full mt-2 w-48 rounded-xl border border-primary/20 bg-card/95 backdrop-blur-xl shadow-lg opacity-0 invisible group-hover/cv:opacity-100 group-hover/cv:visible transition-all duration-200 z-50 overflow-hidden">
+                <div className="px-4 pt-2.5 pb-1 text-[11px] font-semibold uppercase tracking-wide text-primary/50">
+                  English
+                </div>
                 <a href="/Sofiene_JOUINI_Resume.pdf" download
-                  className="flex items-center gap-2.5 px-4 py-3 text-sm text-primary/80 hover:bg-primary/10 hover:text-primary transition-colors duration-150 border-b border-primary/10">
+                  className="flex items-center gap-2.5 px-4 py-2.5 text-sm text-primary/80 hover:bg-primary/10 hover:text-primary transition-colors duration-150">
                   <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
                   PDF
                 </a>
                 <a href="/Sofiene_JOUINI_Resume.docx" download
-                  className="flex items-center gap-2.5 px-4 py-3 text-sm text-primary/80 hover:bg-primary/10 hover:text-primary transition-colors duration-150">
+                  className="flex items-center gap-2.5 px-4 py-2.5 text-sm text-primary/80 hover:bg-primary/10 hover:text-primary transition-colors duration-150 border-b border-primary/10">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                  Word
+                </a>
+                <div className="px-4 pt-2.5 pb-1 text-[11px] font-semibold uppercase tracking-wide text-primary/50">
+                  Français
+                </div>
+                <a href="/Sofiene_JOUINI_Resume_FR.pdf" download
+                  className="flex items-center gap-2.5 px-4 py-2.5 text-sm text-primary/80 hover:bg-primary/10 hover:text-primary transition-colors duration-150">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                  PDF
+                </a>
+                <a href="/Sofiene_JOUINI_Resume_FR.docx" download
+                  className="flex items-center gap-2.5 px-4 py-2.5 text-sm text-primary/80 hover:bg-primary/10 hover:text-primary transition-colors duration-150">
                   <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
                   Word
                 </a>

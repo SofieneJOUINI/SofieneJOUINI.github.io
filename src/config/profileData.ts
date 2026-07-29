@@ -118,7 +118,7 @@ export const profileConfig = {
   experience: [
     {
       id: "senior-lead",
-      title: "Senior Software Engineer (Team Lead)",
+      title: "Senior Software Engineer (Tech Lead)",
       company: "MnC, adad",
       description: "Took on technical leadership in adad, leading and synchronizing backend and frontend teams to design and deliver clean, well-architected solutions around payment reconciliation and accounting in the airline industry.",
       achievements: [
